@@ -1,6 +1,18 @@
+#adding comment
 import RPIO
 from flask import Flask
 from flask import render_template
+
+import shutil
+
+import requests
+
+url = 'http://example.com/img.png'
+response = requests.get(url, stream=True)
+with open('img.png', 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
 app = Flask(__name__)
 RPIO.setup(14, RPIO.OUT)
 @app.route("/on")
