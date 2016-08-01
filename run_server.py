@@ -19,7 +19,7 @@ def hello():
 	return render_template('page.html')
 
 @app.route("/buttons")
-def hello():
+def buttons():
 	return render_template('buttons.html')
 
 if __name__ == "__main__":
